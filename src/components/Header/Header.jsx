@@ -1,9 +1,12 @@
 import "./Header.css";
+import logoHeader from "../../assets/images/logo.png";
 
 const Header = () => {
   return (
     <>
-      <h1>Header</h1>
+      <div className="header-container">
+        <img src={logoHeader} alt="Little Lemon Logo" />
+      </div>
     </>
   );
 };
