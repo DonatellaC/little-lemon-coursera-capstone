@@ -1,9 +1,16 @@
 import "./App.css";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
+import Nav from "./components/Nav/Nav";
 
 function App() {
   return (
     <>
-      <h1>Little Lemon Capstone Project</h1>
+      <Header />
+      <Nav />
+      <Main />
+      <Footer />
     </>
   );
 }
