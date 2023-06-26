@@ -8,7 +8,7 @@ const Footer = () => {
         <img src={logo} alt="Little Lemon Logo Small" />
       </div>
       <div className="copywriting-info">
-        <p>2023 Little Lemon Restaurant. All rights reserved.</p>
+        <p> &copy; 2023 Little Lemon Restaurant. All rights reserved.</p>
       </div>
     </footer>
   );
