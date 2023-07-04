@@ -2,12 +2,10 @@
     background-color: #f2f2f2;
     padding: 20px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer-logo img {
     max-width: 50px;
-}
-
-footer div {
-    flex: 1;
 }

@@ -5,12 +5,12 @@ import "./Main.css";
 
 const Main = () => {
   return (
-    <div>
+    <>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/booking" element={<BookingPage />} />
       </Routes>
-    </div>
+    </>
   );
 };
 
