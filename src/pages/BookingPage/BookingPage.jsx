@@ -1,10 +1,13 @@
 import BookingForm from "../../components/BookingForm/BookingForm";
 
-const BookingPage = () => {
+const BookingPage = ({ availableTimes, dispatchTimes }) => {
   return (
     <>
-      <h1> Booking Page</h1>
-      <BookingForm />
+      <h1>Booking Page</h1>
+      <BookingForm
+        availableTimes={availableTimes}
+        dispatchTimes={dispatchTimes}
+      />
     </>
   );
 };

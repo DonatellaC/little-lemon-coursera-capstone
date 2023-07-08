@@ -1,15 +1,20 @@
 import { useState } from "react";
 import "./BookingForm.css";
 
-const BookingForm = () => {
+const BookingForm = ({ availableTimes, dispatchTimes }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guestNumber, setGuestNumber] = useState("");
   const [occasion, setOccasion] = useState("");
-  const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  };
+
+  const handleDateChange = (e) => {
+    const selectedDate = e.target.value;
+    setDate(selectedDate);
+    dispatchTimes({ type: "UPDATE_TIMES", payload: selectedDate });
   };
 
   return (
@@ -20,9 +25,7 @@ const BookingForm = () => {
           type="date"
           id="res-date"
           value={date}
-          onChange={(e) => {
-            setDate(e.target.value);
-          }}
+          onChange={handleDateChange}
         />
         <label htmlFor="res-time">Choose time</label>
         <select
