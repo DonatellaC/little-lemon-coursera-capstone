@@ -7,4 +7,8 @@ export default defineConfig({
   optimizeDeps: {
     include: ["react-router-dom"],
   },
+  test: {
+    globals: true,
+    environment: "jsdom",
+  },
 });

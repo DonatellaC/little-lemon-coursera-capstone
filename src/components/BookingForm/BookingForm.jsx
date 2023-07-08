@@ -58,7 +58,7 @@ const BookingForm = ({ availableTimes, dispatchTimes }) => {
           <option value="Birthday">Birthday</option>
           <option value="Anniversary">Anniversary</option>
         </select>
-        <input type="submit" value="Make Your reservation" />
+        <input type="submit" value="Book Now" />
       </form>
     </>
   );

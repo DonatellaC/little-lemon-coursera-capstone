@@ -4,20 +4,26 @@ import Home from "../../pages/Home/Home";
 import BookingPage from "../../pages/BookingPage/BookingPage";
 import "./Main.css";
 
+export const initializeTimes = () => {
+  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+};
+
+export const updateTimes = (selectedDate, state) => {
+  return {
+    ...state,
+    selectedDate: {
+      ...state.selectedDate,
+      selectedDate: selectedDate,
+    },
+  };
+};
+
 const Main = () => {
-  const initializeTimes = () => {
-    return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-  };
-
-  const updateTimes = (selectedDate) => {
-    return initializeTimes();
-  };
-
   const [availableTimes, dispatchTimes] = useReducer(
     (state, action) => {
       switch (action.type) {
         case "UPDATE_TIMES":
-          return updateTimes(action.payload);
+          return updateTimes(action.payload, state);
         default:
           return state;
       }
