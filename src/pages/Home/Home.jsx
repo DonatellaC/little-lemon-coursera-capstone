@@ -8,12 +8,13 @@ const Home = () => {
     <main>
       <section className="promo-banner">
         <article className="promo-banner-content">
-          <h1>Get 20% Off Your First Order!</h1>
+          <h1>Welcome to Little Lemon Restaurant!</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            dapibus fermentum orci, nec condimentum justo rhoncus non. Ut
-            elementum nibh non enim dapibus, non hendrerit elit congue. Donec
-            vel hendrerit nunc.
+            Indulge in a delightful dining experience with us. Enjoy our
+            carefully crafted menu, featuring a blend of culinary traditions and
+            innovative creations. Our team of talented chefs and friendly staff
+            are dedicated to providing you with an unforgettable gastronomic
+            journey.
           </p>
         </article>
       </section>
@@ -25,10 +26,10 @@ const Home = () => {
           ></div>
           <h2>Special Offer</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            dapibus fermentum orci, nec condimentum justo rhoncus non. Ut
-            elementum nibh non enim dapibus, non hendrerit elit congue. Donec
-            vel hendrerit nunc.
+            Do not miss our special offer of the month! Experience the perfect
+            harmony of flavors with our exclusive dish, prepared with fresh and
+            locally sourced ingredients. Treat yourself to a culinary delight
+            that will leave you craving for more.
           </p>
         </article>
         <article className="promo-column">
@@ -38,10 +39,10 @@ const Home = () => {
           ></div>
           <h2>New Item</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            dapibus fermentum orci, nec condimentum justo rhoncus non. Ut
-            elementum nibh non enim dapibus, non hendrerit elit congue. Donec
-            vel hendrerit nunc.
+            Discover our latest addition to the menu - a culinary masterpiece
+            that combines unique flavors and textures. Our expert chefs have
+            carefully crafted this dish to bring you a one-of-a-kind dining
+            experience. Be among the first to taste this extraordinary creation.
           </p>
         </article>
         <article className="promo-column">
@@ -51,10 +52,11 @@ const Home = () => {
           ></div>
           <h2>Customer Favorite</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            dapibus fermentum orci, nec condimentum justo rhoncus non. Ut
-            elementum nibh non enim dapibus, non hendrerit elit congue. Donec
-            vel hendrerit nunc.
+            Our customer favorite has won the hearts of many. Indulge in the
+            dish that has become a beloved staple among our loyal patrons. With
+            its perfect blend of flavors and exquisite presentation, it is no
+            wonder why this item has become a timeless classic at Little Lemon
+            Restaurant.
           </p>
         </article>
       </section>

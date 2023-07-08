@@ -60,83 +60,92 @@ const BookingForm = ({ availableTimes, dispatchTimes }) => {
   };
 
   return (
-    <>
-      <h2 role="heading" aria-label="Booking Form">
-        Booking Form
-      </h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="res-date">Choose date</label>
-        <input
-          type="date"
-          id="res-date"
-          value={selectedDate}
-          onChange={handleDateChange}
-          required
-        />
-        <label htmlFor="res-time">Choose time</label>
-        <select
-          id="res-time"
-          value={selectedTime}
-          onChange={handleTimeChange}
-          required
-        >
-          <option value="">Select a time</option>
-          {Array.isArray(availableTimes) &&
-            availableTimes.map((time) => (
-              <option key={time} value={time}>
-                {time}
-              </option>
-            ))}
-        </select>
-        <label htmlFor="guests">Number of guests</label>
-        <input
-          type="number"
-          placeholder="1"
-          min="1"
-          max="10"
-          id="guests"
-          value={guestNumber}
-          onChange={(e) => setGuestNumber(e.target.value)}
-          required
-        />
-        <label htmlFor="occasion">Occasion</label>
-        <select
-          id="occasion"
-          value={occasion}
-          onChange={(e) => setOccasion(e.target.value)}
-          required
-        >
-          <option value="">Select an occasion</option>
-          <option value="Birthday">Birthday</option>
-          <option value="Anniversary">Anniversary</option>
-        </select>
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <label htmlFor="phone">Phone</label>
-        <input
-          type="tel"
-          id="phone"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-        />
-        <input type="submit" value="Book Now" />
-      </form>
-    </>
+    <div className="main-booking-form-container">
+      <div className="booking-form-container">
+        <h2 className="booking-form-heading">Booking Form</h2>
+        <form className="booking-form" onSubmit={handleSubmit}>
+          <label htmlFor="res-date">Choose date</label>
+          <input
+            type="date"
+            id="res-date"
+            value={selectedDate}
+            onChange={handleDateChange}
+            required
+          />
+
+          <label htmlFor="res-time">Choose time</label>
+          <select
+            id="res-time"
+            value={selectedTime}
+            onChange={handleTimeChange}
+            required
+          >
+            <option value="">Select a time</option>
+            {Array.isArray(availableTimes) &&
+              availableTimes.map((time) => (
+                <option key={time} value={time}>
+                  {time}
+                </option>
+              ))}
+          </select>
+
+          <label htmlFor="guests">Number of guests</label>
+          <input
+            type="number"
+            placeholder="1"
+            min="1"
+            max="10"
+            id="guests"
+            value={guestNumber}
+            onChange={(e) => setGuestNumber(e.target.value)}
+            required
+          />
+
+          <label htmlFor="occasion">Occasion</label>
+          <select
+            id="occasion"
+            value={occasion}
+            onChange={(e) => setOccasion(e.target.value)}
+            required
+          >
+            <option value="">Select an occasion</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Anniversary">Anniversary</option>
+          </select>
+
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <label htmlFor="phone">Phone</label>
+          <input
+            type="tel"
+            id="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
+
+          <button type="submit" className="book-now-button">
+            Book Now
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 
