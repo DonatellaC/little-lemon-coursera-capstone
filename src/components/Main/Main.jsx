@@ -4,6 +4,7 @@ import { fetchAPI } from "../../assets/utils/api";
 import { Route, Routes } from "react-router-dom";
 import Home from "../../pages/Home/Home";
 import BookingPage from "../../pages/BookingPage/BookingPage";
+import Menu from "../../pages/Menu/Menu";
 import ConfirmedBooking from "../../components/ConfirmedBooking/ConfirmedBooking";
 import "./Main.css";
 
@@ -60,6 +61,7 @@ const Main = () => {
           }
         />
         <Route path="/booking-confirmed" element={<ConfirmedBooking />} />
+        <Route path="/menu" element={<Menu />} />
       </Routes>
     </>
   );

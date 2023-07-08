@@ -1,0 +1,39 @@
+.menu-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 650px;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.menu-item .item-name {
+    flex-basis: 70%;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+}
+
+.menu-item .item-price {
+    color: #ffa500;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+
+    .menu-item .item-name,
+    .menu-item .item-price {
+        flex-basis: 100%;
+    }
+
+    .menu-item .item-price {
+        text-align: right;
+    }
+}
