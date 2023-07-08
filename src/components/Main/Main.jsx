@@ -1,21 +1,24 @@
-import { useState, useReducer } from "react";
+import { useReducer, useEffect } from "react";
+import { fetchAPI } from "../../assets/utils/api";
+
 import { Route, Routes } from "react-router-dom";
 import Home from "../../pages/Home/Home";
 import BookingPage from "../../pages/BookingPage/BookingPage";
 import "./Main.css";
 
-export const initializeTimes = () => {
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+export const initializeTimes = async () => {
+  const date = new Date();
+  const availableTimes = await fetchAPI(date);
+  return availableTimes;
 };
 
-export const updateTimes = (selectedDate, state) => {
-  return {
-    ...state,
-    selectedDate: {
-      ...state.selectedDate,
-      selectedDate: selectedDate,
-    },
-  };
+export const updateTimes = async (selectedDate, selectedTime) => {
+  const availableTimes = await fetchAPI(selectedDate);
+  if (availableTimes.includes(selectedTime)) {
+    return selectedTime;
+  } else {
+    return null;
+  }
 };
 
 const Main = () => {
@@ -23,14 +26,22 @@ const Main = () => {
     (state, action) => {
       switch (action.type) {
         case "UPDATE_TIMES":
-          return updateTimes(action.payload, state);
+          return action.payload;
         default:
           return state;
       }
     },
-    null,
+    [],
     initializeTimes
   );
+
+  useEffect(() => {
+    const fetchAndUpdateTimes = async () => {
+      const updatedTimes = await initializeTimes();
+      dispatchTimes({ type: "UPDATE_TIMES", payload: updatedTimes });
+    };
+    fetchAndUpdateTimes();
+  }, []);
 
   return (
     <>

@@ -11,14 +11,17 @@ const BookingForm = ({ availableTimes, dispatchTimes }) => {
     e.preventDefault();
   };
 
-  const handleDateChange = (e) => {
-    const selectedDate = e.target.value;
+  const handleDateChange = async (e) => {
+    const selectedDate = new Date(e.target.value);
     setDate(selectedDate);
     dispatchTimes({ type: "UPDATE_TIMES", payload: selectedDate });
   };
 
   return (
     <>
+      <h2 role="heading" aria-label="Booking Form">
+        Booking Form
+      </h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="res-date">Choose date</label>
         <input
@@ -33,11 +36,12 @@ const BookingForm = ({ availableTimes, dispatchTimes }) => {
           value={time}
           onChange={(e) => setTime(e.target.value)}
         >
-          {availableTimes.map((time) => (
-            <option key={time} value={time}>
-              {time}
-            </option>
-          ))}
+          {Array.isArray(availableTimes) &&
+            availableTimes.map((time) => (
+              <option key={time} value={time}>
+                {time}
+              </option>
+            ))}
         </select>
         <label htmlFor="guests">Number of guests</label>
         <input
