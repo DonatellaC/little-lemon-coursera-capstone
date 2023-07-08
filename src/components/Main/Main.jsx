@@ -7,6 +7,7 @@ import BookingPage from "../../pages/BookingPage/BookingPage";
 import Menu from "../../pages/Menu/Menu";
 import ConfirmedBooking from "../../components/ConfirmedBooking/ConfirmedBooking";
 import "./Main.css";
+import AboutPage from "../../pages/AboutPage/AboutPage";
 
 export const initializeTimes = async () => {
   const date = new Date();
@@ -62,6 +63,7 @@ const Main = () => {
         />
         <Route path="/booking-confirmed" element={<ConfirmedBooking />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </>
   );
