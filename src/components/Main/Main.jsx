@@ -29,7 +29,6 @@ const Main = () => {
         case "UPDATE_TIMES":
           return action.payload;
         case "BOOKING_SUBMITTED":
-          console.log("Booking submitted:", action.payload);
           return state;
         default:
           return state;
